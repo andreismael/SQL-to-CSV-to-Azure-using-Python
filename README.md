@@ -3,13 +3,7 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 # Requirements
 * Python 3.7.6
-
-![pythonInstall](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/pythonInstall.png)
-
   * Libs: pyodbc, shutil, azure.storage.blob, numpy.
-  
-![pipInstall](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/pipInstall.png)
-
 * Azure Storage account type: Data Lake Storage Gen2.
 * SQL Server 2014.
 * Host with Win Server or Win 10 installed.
@@ -38,7 +32,13 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ## In the Host:
 1. Install Python 3.7.6 - https://www.python.org/downloads/release/python-376/.
+
+![pythonInstall](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/pythonInstall.png)
+
 2. Install Libs with pip, example: "pip install pyodbc".
+
+![pipInstall](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/pipInstall.png)
+
 3. Create the follow folder structure where you want to store your projects:
 
 ![structureFolders](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/structureFolders.png)
