@@ -4,6 +4,7 @@ from azure.storage.blob import BlobServiceClient
 
 #-----------Log file-----------#
 logging.basicConfig(filename=datetime.now().strftime(os.path.abspath(r"../Logs/databaseExtract_%H_%M_%S_%d_%m_%Y.log")), level=logging.INFO)
+logging.getLogger("azure.core.pipeline.policies.http_logging_policy").setLevel(logging.WARNING) #disable policy logs from azure
 
 #--------Connection and statement execution--------#
 
@@ -44,15 +45,15 @@ conn.close()
 
 try:
     #Azure Connection
-    blob_service = BlobServiceClient(account_url="storage blob url", account_name='storage account name', account_key='access_key')
+    blob_service = BlobServiceClient(account_url="Storage Blob URL", account_name='storage account name', account_key='access_key')
 
     #container recebe o mesmo nome do arquivo csv
     filename = os.path.basename(local_file_name)
     container_name = os.path.splitext(filename)[0]
     
-    logging.info("Conexão com Azure - OK")
+    logging.info("Azure Connection - OK")
 except:
-    logging.info("Conexão com Azure - ERROR")
+    logging.info("Azure Connection - FAILED")
     
 try:
     #Local File
@@ -61,9 +62,9 @@ try:
     local_file_name = "/"+csvfile[0]
     full_path_to_file = (local_path+local_file_name)
     
-    logging.info("Arquivo Local - OK")
+    logging.info("Local File - OK")
 except:
-    logging.info("Arquivo Local - ERROR")
+    logging.info("Local File - ERROR")
     
 try:
     #Upload Local File to Container
@@ -71,7 +72,7 @@ try:
     with open(full_path_to_file, "rb") as data:
         blob_client.upload_blob(data, overwrite=True)
     
-    logging.info("Upload do CSV para o Azure - OK")
+    logging.info("Upload CSV to Azure - OK")
 except:
-    logging.info("Upload do CSV para o Azure - ERROR")
+    logging.info("Upload CSV to Azure - FAILED")
 
