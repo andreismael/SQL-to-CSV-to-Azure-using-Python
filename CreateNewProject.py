@@ -74,7 +74,7 @@ shutil.copy(src, dst, follow_symlinks=True)
 
 #-----------Azure Container-------------#
 
-blob_service = BlobServiceClient(account_url="your azure account url here", account_name='storage account name', account_key='storage account key with write permissions')
+blob_service = BlobServiceClient(account_url="storage blob url", account_name='storage account name', account_key='storage account key with write permissions')
 
 #Create Menu
 menuItems = np.array(["Create Container in Azure", "List Containers in Azure", "Quit"])
