@@ -86,9 +86,18 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
   
 ## In PowerBI:
 1. Get Data - Azure - Azure Data Lake Storage Gen2.
+
+![powerbiStorageGen2](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/powerbiStorageGen2.png)
+
 2. URL: Get the container URL in Analytics/Scripts/Logs/create_project..txt. Ex: https://storageaccount.dfs.core.windows.net/container.
+
+![containerURL](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/containerURL.png)
+
 3. If you implemented Option 1 in "Container Permission Settings in Azure Portal" step, then choose "Organization Account" and login with your Azure AD Account. 
+
+![orgAccountPowerBI](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/orgAccountPowerBI.png)
+
 4. If you implemented Option 2 in "Container Permission Settings in Azure Portal" step, then choose "Account Key" and paste the "container account key".
   
-
+![accountKeyPowerBI](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/accountKeyPowerBI.png)
   
