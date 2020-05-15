@@ -94,6 +94,8 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ![containerURL](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/containerURL.png)
 
+![URLStorageGen2](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/URLStorageGen2.png)
+
 3. If you implemented Option 1 in "Container Permission Settings in Azure Portal" step, then choose "Organization Account" and login with your Azure AD Account. 
 
 ![orgAccountPowerBI](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/orgAccountPowerBI.png)
