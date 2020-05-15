@@ -83,7 +83,7 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ![roleStorageBlobDataReader](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/roleStorageBlobDataReader.png)
 
-* Option 2- You can create a SAS(Shared Access Signature) for the users access data(csv) in PowerBI using Access Key.
+* Option 2- Create a SAS(Shared Access Signature) in the container, to users access data(csv) in PowerBI using Access Key.
   
 ## In PowerBI:
 1. Get Data - Azure - Azure Data Lake Storage Gen2.
