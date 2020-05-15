@@ -35,7 +35,7 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ![pythonInstall](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/pythonInstall.png)
 
-2. Install Libs with pip, example: "pip install pyodbc".
+2. Install Libs(pyodbc, shutil, azure.storage.blob, numpy) with pip, example: "pip install pyodbc".
 
 ![pipInstall](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/pipInstall.png)
 
