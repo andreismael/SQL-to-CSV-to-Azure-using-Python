@@ -87,8 +87,8 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 ## In PowerBI:
 1. Get Data - Azure - Azure Data Lake Storage Gen2.
 2. URL: Get the container URL in Analytics/Scripts/Logs/create_project..txt. Ex: https://storageaccount.dfs.core.windows.net/container.
-3. Choose "Organization Account" and login with your Azure AD Account if you implemented Option 1 in "Container Permission Settings in Azure Portal" step.
-4. Choose "Account Key" and paste the "container account key" if you implemented Option 2 in "Container Permission Settings in Azure Portal" step.
+3. If you implemented Option 1 in "Container Permission Settings in Azure Portal" step, then choose "Organization Account" and login with your Azure AD Account. 
+4. If you implemented Option 2 in "Container Permission Settings in Azure Portal" step, then choose "Account Key" and paste the "container account key".
   
 
   
