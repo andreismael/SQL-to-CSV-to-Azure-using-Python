@@ -64,6 +64,18 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 10. Access folder Analytics/Projects/Your Project/Scripts.
 11. Execute FromSqlServer-ToCsv-ToAzure.py.
 12. Check the log in Analytics/Projects/Your Project/Logs and the CSV File in Analytics/Projects/Your Project/Files and in Azure Container.
+
+### Scheduling Script in Windows:
+1. Get directory where Python is installed.
+
+![dirPython](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/dirPython.png)
+
+2. Open the Windows Task Scheduler.
+3. Create a new task.
+4. Schedule the task.
+5. Configure the Action like below:
+
+![taskSchd](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/taskSchd.png)
   
 ## Container Permission Settings in Azure Portal:
 * Option 1- If you have Azure AD, you can add the "Storage Blog Data Reader" for a user in Access Control of the container.
