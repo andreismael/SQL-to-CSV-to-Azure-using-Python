@@ -8,14 +8,14 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 * SQL Server 2014.
 * Host with Win Server or Win 10 installed.
 
-# Implement project step by step
+# Implementing the Project Step by Step
 
-## In SQL Server:
+## SQL Server:
 * Create a view and name it like "v_name_of_view".
 
 ![viewSql](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/viewSqlServer.png)
   
-## In Azure Portal:
+## Azure Portal:
 1. Create a new storage account of type "Data Lake Storage Gen2".
 
 ![createStorageAccount](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/storageAccountAzure.png)
@@ -30,7 +30,7 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ![accessKey](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/accessKey.png)
 
-## In the Host:
+## Host Settings:
 1. Install Python 3.7.6 - https://www.python.org/downloads/release/python-376/.
 
 ![pythonInstall](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/pythonInstall.png)
@@ -81,14 +81,14 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ![taskSchd](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/taskSchd.png)
   
-## Container Permission Settings in Azure Portal:
+## Container Permission in Azure Portal:
 * Option 1- If you have Azure AD, you can add the "Storage Blog Data Reader" for a user in Access Control of the container.
 
 ![roleStorageBlobDataReader](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/roleStorageBlobDataReader.png)
 
 * Option 2- Create a SAS(Shared Access Signature) in the container, to users access data(csv) in PowerBI using Access Key.
   
-## In PowerBI:
+## Getting Data by PowerBI:
 1. Get Data - Azure - Azure Data Lake Storage Gen2.
 
 ![powerbiStorageGen2](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/powerbiStorageGen2.png)
