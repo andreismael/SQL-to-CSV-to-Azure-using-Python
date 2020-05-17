@@ -1,4 +1,4 @@
-# SQLServer-to-CSV-to-AzureBlobStorage-using-Python
+# SQL-to-CSV-to-Azure-using-Python
 Extract data from SQL Server, input in a CSV file, and upload the file to Azure to be consumed by Power BI.
 
 # Requirements
