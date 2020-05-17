@@ -48,23 +48,21 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ![replaceScriptCreateProject](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/replaceScriptCreateProject.png)
 
-6. Edit the script FromSqlServer-ToCsv-ToAzure.py. 
+6. Edit the script FromSqlServer-ToCsv-ToAzure.py. Replace the SQL Server connection info(where your view are stored) and Azure Connection(account_name, account_url and access_key).
 
 ![replaceSqlServerInfoScript](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/replaceSqlServerInfoScript.png)
 
-7. Replace the SQL Server connection info(where your view are stored) and Azure Connection(account_name, account_url and access_key).
-
 ![replaceAzureConnectionInfoScript](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/replaceAzureConnectionInfoScript.png)
 
-8. Run "CreateNewProject.py". Press 1 to input the project name(*same name of view, without prefix v_*) and press 3 to create the structure folder of the project. After that, press 1 to create the container in Azure.
-9. Consult logs in Analytics/Scripts/Logs and copy the "Azure Container URL". *You will need this for the PowerBI steps*.
+7. Run "CreateNewProject.py". Press 1 to input the project name(*same name of view, without prefix v_*) and press 3 to create the structure folder of the project. After that, press 1 to create the container in Azure.
+8. Consult logs in Analytics/Scripts/Logs and copy the "Azure Container URL". *You will need this for the PowerBI steps*.
 
 ![containerURL](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/containerURL.png)
 
-10. Access folder "Analytics/Projects/Your Project/Scripts".
-11. Execute "FromSqlServer-ToCsv-ToAzure.py".
-12. Check the log in "Analytics/Projects/Your Project/Logs". 
-13. Check the CSV File in "Analytics/Projects/Your Project/Files" and in the Azure Container.
+9. Access folder "Analytics/Projects/Your Project/Scripts".
+10. Execute "FromSqlServer-ToCsv-ToAzure.py".
+11. Check the log in "Analytics/Projects/Your Project/Logs". 
+12. Check the CSV File in "Analytics/Projects/Your Project/Files" and in the Azure Container.
 
 ## Scheduling Script in Windows:
 1. Get directory where Python is installed.
