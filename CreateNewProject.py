@@ -5,11 +5,12 @@ from datetime import datetime
 from shutil import copy
 import numpy as np
 
-#-----------Log file-----------#
-logging.basicConfig(filename=datetime.now().strftime(os.path.abspath(r"./Logs/createProject_%H_%M_%S_%d_%m_%Y.log")), level=logging.INFO)
+logsCreateProject = "C:/TI Analytics/Scripts/Logs"
+projectsDir = "C:/TI Analytics/Projects"
 
 #-----------Project Name-------------#
-#The project name will be the same for csvfile and Azure container, then avoid using spaces or special characteres.
+#O nome do projeto será usado para criar o arquivo csv local e também o container no Azure,
+#por isso nao poderá ter espaços ou caracteres especiais.
 
 #Menu functions
 def inputNumber(prompt):
@@ -33,7 +34,7 @@ def displayMenu(options):
     return choice
 
 #Create Menu
-menuItems = np.array(["Enter Project Name(Same name VIEW Sql Server, without prefix v_)","Display Project Name","Create Folders Structure and CSV File\n"])
+menuItems = np.array(["Enter Project Name(Same name VIEW Sql Server, without prefix v_)","Display Project Name","Enter Project Description","Create Folders Structure and CSV File\n"])
 project = "Unnamed Project"
 
 while True:
@@ -43,7 +44,7 @@ while True:
     if choice == 1:
         viewName = input("\nPlease enter Project Name: ")
         project = viewName.replace("_","-")
-        path = os.chdir(r"../Projects")
+        path = os.chdir(projectsDir)
         projects = os.listdir(path)
         for i in projects:
             if(i == project):
@@ -52,16 +53,31 @@ while True:
         print("\nProject Name: "+project+"\n")
 
     elif choice == 3:
+        requester = input("\nRequester: ")
+        objective = input("\nObjective: ")
+        requestDate = input("\nRequest Date: ")
+        with open("readme_"+project+".txt", "w") as file:
+            file.write("Requester: "+requester+"\n")
+            file.write("Objective: "+objective+"\n")
+            file.write("Request Date: "+requestDate+"\n")
+            file.close
+
+    elif choice == 4:
         break
 
 #-----------Folders Structure-------------#
-os.chdir(r"../Projects")
+os.chdir(projectsDir)
 os.mkdir(project)
 os.chdir(project)
+if os.path.exists(os.path.abspath(r"../readme_"+project+".txt")):
+    src = (os.path.abspath(r"../readme_"+project+".txt"))
+    dst = (os.path.abspath(r"./"))
+    shutil.move(src, dst)
+else:
+    print("Readme does not exists!")
 os.mkdir("Files")
 os.mkdir("Scripts")
 os.mkdir("Logs")
-
 #-----------Csv File-------------#
 
 os.chdir("Files")
@@ -74,7 +90,7 @@ shutil.copy(src, dst, follow_symlinks=True)
 
 #-----------Azure Container-------------#
 
-blob_service = BlobServiceClient(account_url="storage blob url", account_name='storage account name', account_key='storage account key with write permissions')
+blob_service = BlobServiceClient(account_url="your account URL", account_name='storage account name', account_key='account key')
 
 #Create Menu
 menuItems = np.array(["Create Container in Azure", "List Containers in Azure", "Quit"])
@@ -95,7 +111,7 @@ while True:
     elif choice == 3:
         break
 
-containerUrl = 'https://'+blob_service.account_name+'.dfs.core.windows.net/'+project; #This URL will be used to connect in container by Power BI.
+containerUrl = 'https://'+blob_service.account_name+'.dfs.core.windows.net/'+project;
 
 print("\n---------Project Summary-----------\n")
 print("Project Name: "+project)
@@ -106,7 +122,10 @@ for c in containers:
     if(c.name == project):
         print("Azure Container Name: "+project)
         print("Azure Container URL: "+containerUrl)
-            
+
+#-----------Log file-----------#
+logging.basicConfig(filename=datetime.now().strftime(os.path.abspath(r"C:/TI Analytics/Scripts/Logs/createProject_"+project+"_%H_%M_%S_%d_%m_%Y.log")), level=logging.INFO)
+
 logging.info("\n---------Project Summary-----------\n")
 logging.info("Project Name: "+project)
 logging.info("CSV File: "+project+".csv")
