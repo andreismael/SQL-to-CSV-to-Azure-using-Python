@@ -55,11 +55,11 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 ![replaceAzureConnectionInfoScript](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/replaceAzureConnectionInfoScript.png)
 
 7. Run "CreateNewProject.py". 
-  - Press 1 to input the project name(*same name of view, without prefix v_*);
-  - Press 2 if you want to see the project name;
-  - Press 3 if you want to create a description for the project;
-  - Press 4 to create the structure folder of the project;
-  - After, Press 1 to create the container in Azure and 3 to quit.
+    - Press 1 to input the project name(*same name of view, without prefix v_*);
+    - Press 2 if you want to see the project name;
+    - Press 3 if you want to create a description for the project;
+    - Press 4 to create the structure folder of the project;
+    - After, Press 1 to create the container in Azure and 3 to quit.
 8. Consult logs in Analytics/Scripts/Logs and copy the "Azure Container URL". *You will need this for the PowerBI steps*.
 
 ![containerURL](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/containerURL.png)
