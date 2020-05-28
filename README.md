@@ -22,7 +22,7 @@ Extract data from SQL Server, input in a CSV file, and upload the file to Azure 
 
 ![createStorageAccount](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/storageAccountAzure.png)
 
-2. Create a new SAS(Shared Access Signature) with write permissions.
+2. Create a new SAS(Shared Access Signature) with write permissions. 
 
 ![sasAzure](https://github.com/andreismael/SQLServer-to-CSV-to-AzureBlobStorage-using-Python/blob/master/Images/sasAzure.png)
 
